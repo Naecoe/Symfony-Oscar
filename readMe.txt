@@ -3,6 +3,7 @@ Pour lancer le projet Oscar :
 =============================
 
 * Lancer une console powershell depuis le dossier Oscar, exécuter :
+	composer update
 	symfony serve -d
  	symfony console doctrine:database:create
 
