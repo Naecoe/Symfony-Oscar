@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title 'Female Singer' %}
+
+{% block body %}
+    <button class="btn btn-light btn-primary mt-4"><a href="{{ path('home') }}">BACK HOME</a></button>
+    
+    <h1 class="mt-4 mb-4 text-center text-muted">Best Female Vocalist</h1>  
+
+    {% for row in femSingers|batch(3) %}
+        <div class="row mb-5">
+            {% for femSinger in row %}
+                <div class="col-md-4">
+                    <article class="pin rounded shadow">
+                        <div class="mw-100 rounded-top overflow-hidden">
+                            <a href="{{ path('showe_desc', {id: femSinger.id}) }}">
+                                <img src="{{ femSinger.imageUrl }}" alt=" image" class="w-100">
+                            </a>
+                            <p class="mt-3 text-center"><small>{{ femSinger.name }}</small></p> 
+                        </div>
+                    </article>
+                </div>
+            {% endfor %} 
+        </div>
+    {% endfor %}
+
+{% endblock %}

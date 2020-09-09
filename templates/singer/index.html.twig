@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Homepage' %}
+
+{% block body %}
+    <h1 class="mt-4 mb-4 text-center text-muted">Some metal bands</h1>
+
+    <figure class="big mb-5 text-center shadow">
+        <img src="/image/marduk.jpg" alt="" class="rounded">    
+    </figure>
+
+    {% for row in bands|batch(3) %}
+        <div class="row mb-5">
+            {% for band in row %}
+                <div class="col-md-4">
+                    <article class="acc rounded shadow">
+                        <div class="mw-100 rounded-top overflow-hidden mb-4">   
+                            <img src="{{ band.imageUrl }}" alt=" image" class="w-100 rounded">   
+                        </div>
+                    </article>
+                </div>
+            {% endfor %} 
+        </div>
+    {% endfor %}
+
+{% endblock %}

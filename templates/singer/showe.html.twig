@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title femSinger.name %}
+
+{% block body %}
+    <div class="row mt-5 mb-4">
+        <div class="col-md-6 mx-auto">
+
+            <article class="bg-white rounded shadow">
+                <div class="mw-100 rounded-top overflow-hidden">
+                    <img src="{{ femSinger.imageUrl }}" alt="" class="w-100">
+                </div>
+
+                <div class="p-3">
+                    <h1 class="h5 text-secondary text-muted text-center">{{ femSinger.name }}</h1>
+                    <p class="pt-3 text-break"><small>{{ femSinger.description }}</small></p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+{% endblock %}
